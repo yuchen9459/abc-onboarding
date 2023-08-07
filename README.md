@@ -44,20 +44,24 @@ The RESTful APIs allow customer to register, login, check the user account overv
 3. Switch to the correct folder
 
    ```bash
-   cd onboarding
+   cd abc-onboarding
    ```
+4. Build jar with following command
 
-4. Start the application with following command
+   ```bash
+   mvn clean install
+   ```
+5. Start the application with following command
 
    ```bash
    docker-compose up --build -d
    ```
-5. Access to the Swagger UI via following URL:
+6. Access to the Swagger UI via following URL:
 
    ```bash
    http://localhost:8080/swagger-ui/index.html
    ```
-5. The exported Postman Collection can be found under the name. Import to the Postman would be enough to get started with the API testing.
+7. The exported Postman Collection can be found under the name. Import to the Postman would be enough to get started with the API testing.
 
    ```bash
    ABC.postman_collection.json
