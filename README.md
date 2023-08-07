@@ -38,7 +38,7 @@ The RESTful APIs allow customer to register, login, check the user account overv
 2. Clone the codebase to your local machine.
 
    ```bash
-   git clone https://github.com/yuchen9459/Starbux.git
+   git clone https://github.com/yuchen9459/abc-onboarding
    ```
 
 3. Switch to the correct folder
