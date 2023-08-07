@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "bd7f2345-cd92-498e-99c9-933cadf5a820",
+		"name": "ABC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4252745"
+	},
+	"item": [
+		{
+			"name": "Register_with_correct_attributes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// Trigger twice without changing username can lead to the conflicted username exception.\n{\n    \"username\": \"ethan-sun\",\n    \"name\": \"Ethan Sun\",\n    \"address\": {\n        \"country\": \"Netherlands\",\n        \"city\": \"Amsterdam\",\n        \"zipcode\": \"2595AK\",\n        \"street\": \"Van halewijlaan\"\n    },\n    \"documentId\": \"123\",\n    \"birthDate\": \"1994-05-05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register_with_unsupported_country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"ethan-sun\",\n    \"name\": \"Ethan Sun\",\n    \"address\": {\n        \"country\": \"Beijing\",\n        \"city\": \"China\",\n        \"zipcode\": \"11111\",\n        \"street\": \"Van halewijlaan\"\n    },\n    \"documentId\": \"123\",\n    \"birthDate\": \"1994-05-05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register_with_under_age",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"ethan-sun\",\n    \"name\": \"Ethan Sun\",\n    \"address\": {\n        \"country\": \"Germany\",\n        \"city\": \"Amsterdam\",\n        \"zipcode\": \"2595AK\",\n        \"street\": \"Van halewijlaan\"\n    },\n    \"documentId\": \"123\",\n    \"birthDate\": \"2005-05-05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_with_correct_credentials",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// Make sure copy the credentials which you received after the registration.\n{\n    \"username\": \"ethan-sun1\",\n    \"password\": \"KKXBJ!vaybk91360\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/logon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check user account overview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/overview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"overview"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
