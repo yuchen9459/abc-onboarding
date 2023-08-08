@@ -73,14 +73,14 @@ public class GlobalControllerExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(BadRequestException.class)
     public Map<String, Object> handleBadRequestException(BadRequestException e, WebRequest request) {
-        LOGGER.warn(BAD_REQUEST_MESSAGE, e.getMessage(), e);
+        LOGGER.error(BAD_REQUEST_MESSAGE, e.getMessage(), e);
         return createErrorResponse(request, e.getErrorCode(), HttpStatus.BAD_REQUEST);
     }
 
     @ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler(ConflictedUsernameException.class)
     public Map<String, Object> handleConflictedUsernameException(ConflictedUsernameException e, WebRequest request) {
-        LOGGER.warn(CONFLICTED_REQUEST_MESSAGE, e.getMessage(), e);
+        LOGGER.error(CONFLICTED_REQUEST_MESSAGE, e.getMessage(), e);
         return createErrorResponse(request, e.getErrorCode(), HttpStatus.CONFLICT);
     }
 
