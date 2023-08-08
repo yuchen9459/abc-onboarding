@@ -38,7 +38,7 @@ The RESTful APIs allow customer to register, login, check the user account overv
 2. Clone the codebase to your local machine.
 
    ```bash
-   git clone https://github.com/yuchen9459/abc-onboarding
+   git clone https://github.com/yuchen9459/abc-onboarding.git
    ```
 
 3. Switch to the correct folder
@@ -72,7 +72,7 @@ The RESTful APIs allow customer to register, login, check the user account overv
 1. Clone the codebase to your local machine.
 
    ```bash
-   git clone https://github.com/yuchen9459/Starbux.git
+   git clone https://github.com/yuchen9459/abc-onboarding.git
    ```
 2. Run the application by Intellij, please make sure the port 8080 is available.
 
